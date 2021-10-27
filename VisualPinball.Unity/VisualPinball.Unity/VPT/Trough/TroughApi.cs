@@ -281,6 +281,7 @@ namespace VisualPinball.Unity
 			if (args.IsEnabled) {
 				Logger.Info("Draining ball into trough.");
 				_drainSwitch.DestroyBall(args.BallEntity);
+				EntrySwitch?.SetSwitch(true);
 				DrainBall();
 			}
 		}
@@ -456,6 +457,7 @@ namespace VisualPinball.Unity
 							Logger.Warn("No ball, ignoring.");
 							return false;
 						}
+						EntrySwitch.SetSwitch(false);
 						break;
 
 					default:
